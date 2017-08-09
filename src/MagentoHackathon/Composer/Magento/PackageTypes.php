@@ -18,5 +18,7 @@ class PackageTypes {
         'magento2-library'  =>  '/lib/internal/',
         'magento2-language' =>  '/app/i18n/',
         'magento2-component'=>  './',
+        'magento2-test-module'=>  '/dev/tests/acceptance/',
+        'magento2-test-component'=>  '/dev/tests/acceptance/',
     );
 }

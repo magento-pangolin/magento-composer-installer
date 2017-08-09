@@ -311,7 +311,12 @@ class Plugin implements PluginInterface, EventSubscriberInterface
             realpath($composer->getConfig()->get('vendor-dir')),
             true
         );
-        $vendorPathFile = $magentoDir . '/app/etc/vendor_path.php';
+        $etcDir = $magentoDir . '/app/etc';
+        if (file_exists($etcDir)) {
+            $vendorPathFile = $etcDir . '/vendor_path.php';
+        } else {
+            $vendorPathFile = $magentoDir . '/vendor_path.php';
+        }
         $content = <<<AUTOLOAD
 <?php
 /**

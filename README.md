@@ -156,6 +156,61 @@ Example:
 
 Final location is `<magento_root>/dev/tools/Magento/Tools/Migration`
 
+### Magento Test Module
+`"type": "magento2-test-module"`
+
+Installation location: `dev/tests/acceptance`
+
+Example:
+
+```json
+{
+    "name": "magento/magento2-functional-test-module-catalog",
+    "description": "N/A",
+    "require": {
+        ...
+    },
+    "type": "magento2-test-module",
+    "extra": {
+        "map": [
+            [
+                "*",
+                "tests/functional/Magento/FunctionalTest/Catalog"
+            ]
+        ]
+    }
+}
+```
+
+Final location is `<magento_root>/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/Catalog`
+
+### Magento Test Component
+`"type": "magento2-test-component"`
+
+Installation location: `dev/tests/acceptance`
+
+Example:
+
+```json
+{
+    "name": "magento/magento2-functional-tests-base",
+    "description": "N/A",
+    "require": {
+        ...
+    },
+    "type": "magento2-test-component",
+    "extra": {
+        "map": [
+            [
+                ".env.example",
+                ".env.example"
+            ]
+        ]
+    }
+}
+```
+
+Final location is `<magento_root>/dev/tests/acceptance/.env.example`
 
 ## Autoload
 After handling all Magento components, `<magento_root>/app/etc/vendor_path.php` specifies the path to your `vendor` directory.
